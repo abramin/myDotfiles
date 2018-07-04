@@ -3,7 +3,6 @@ alias ll="ls -l"
 alias lla="ls -la"
 alias ..="cd .."
 alias ...="cd ../.."
-alias dev="cd ~/developments"
 
 # Git
 alias g="git"
@@ -21,10 +20,6 @@ alias be="bundle exec "
 # allows local installations of node packages without using symlinks
 function install-local {
   npm install $(npm pack $1 | tail -1)
-}
-
-function docker-login {
-  $(aws ecr get-login --no-include-email)
 }
 
 # Bash prompt
@@ -74,16 +69,3 @@ export EDITOR=vim
 
 # turn on garbage collection
 export DGC=true
-
-# default queue provider
-export CACHE_STORE_HOST="redis"
-export MQ_ENDPOINT="rabbitmq"
-export QUEUE_PROVIDER="rabbitmq"
-
-# mysql defaults
-export MYSQL_USERNAME='root'
-export MYSQL_PASSWORD='admin'
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi

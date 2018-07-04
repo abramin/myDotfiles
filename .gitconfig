@@ -1,8 +1,8 @@
 [user]
-  name = Andrew Tait
-  email = andrew.tait@sage.com
+  name = Alexander Ramin
+  email = ramin.blair@gmail.com
 [github]
-  user = andrewjtait
+  user = abramin
 [init]
   templatedir = ~/.git_template
 [color]
@@ -22,16 +22,5 @@
   added = yellow
   changed = green
   untracked = cyan
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-  tool = Kaleidoscope
-[difftool]
-  prompt = false
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-[mergetool]
-  prompt = false
-[merge]
-  tool = Kaleidoscope
+[alias]
+    hist = log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short
